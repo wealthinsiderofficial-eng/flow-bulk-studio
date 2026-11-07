@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#20396f">
+  <title>Flow Bulk Studio</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div class="brand"><span class="mark">F</span><div><h1>Flow Bulk Studio</h1><p>One workspace. Multiple prompts. Faster production.</p></div></div>
+      <div class="hero-tools"><button id="installApp" class="install-btn" hidden>Install app</button><span class="version">MOBILE + DESKTOP</span></div>
+    </header>
+
+    <section class="panel">
+      <div class="section-head"><div><h2>Prompt batch</h2><p>Paste prompts together, with a blank line between each one.</p></div><span class="pill">Max 20</span></div>
+      <textarea id="prompts" placeholder="Prompt 1: Mia explaining compound interest with a simple visual...
+
+Prompt 2: A family planning its monthly budget at a kitchen table...
+
+Prompt 3: An investor reviewing a diversified portfolio..."></textarea>
+      <div class="setting">
+        <label for="count">Images per prompt</label>
+        <select id="count"><option value="1">1 image</option><option value="2" selected>2 images</option><option value="3">3 images</option><option value="4">4 images</option></select>
+      </div>
+      <div class="stats">
+        <div><small>Prompts detected</small><strong id="promptCount">0</strong></div>
+        <div><small>Total images requested</small><strong id="imageCount">0</strong></div>
+      </div>
+      <div class="actions">
+        <button id="save" class="primary">Save batch on this device</button>
+        <button id="export" class="secondary">Export for extension</button>
+        <label class="file secondary">Import batch<input type="file" id="import" accept="application/json,.json"></label>
+      </div>
+      <p id="status" class="status" aria-live="polite">This starter saves your prompt batch locally.</p>
+      <p class="install-help">Android: open this page in Chrome, tap <b>Install app</b> when shown, or use Chrome menu → <b>Install app</b> / <b>Add to Home screen</b>.</p>
+    </section>
+
+    <section class="panel info">
+      <h2>How the two-part setup works</h2>
+      <div class="step"><b>1</b><div><strong>Mobile / Web app</strong><p>Create, edit and export your prompt batch from Android or laptop.</p></div></div>
+      <div class="step"><b>2</b><div><strong>Chrome extension</strong><p>On desktop Chrome, import the same batch and prepare it for Flow automation.</p></div></div>
+      <div class="step"><b>3</b><div><strong>Google Flow</strong><p>The desktop extension will control the visible Flow tab after its interface is verified.</p></div></div>
+      <p class="notice">Mobile app currently prepares and transfers prompts. It does not remotely control Google Flow or generate images in the background yet.</p>
+    </section>
+    <footer>Flow Bulk Studio · PWA test build v0.5 · Prompt preparation only</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
